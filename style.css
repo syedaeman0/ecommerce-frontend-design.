@@ -108,3 +108,24 @@ object-fit:contain;
 color:#5012fa;
 font-weight:bold;
 }
+
+/* Navbar responsive */
+
+@media (max-width:768px){
+
+.navbar form{
+flex-direction:column;
+gap:10px;
+margin-top:10px;
+}
+
+.navbar input,
+.navbar select{
+width:100%;
+
+}
+.navbar-toggler{
+border:1px solid #ddd;
+}
+
+}

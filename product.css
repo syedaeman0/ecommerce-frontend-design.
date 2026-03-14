@@ -95,3 +95,19 @@ padding:12px;
 }
 
 }
+/* Navbar responsive */
+
+@media (max-width:768px){
+
+.navbar form{
+flex-direction:column;
+gap:10px;
+margin-top:10px;
+}
+
+.navbar input,
+.navbar select{
+width:100%;
+}
+
+}
