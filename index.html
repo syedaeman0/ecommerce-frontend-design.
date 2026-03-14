@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Brand</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+
+    <nav class="navbar navbar-expand-lg bg-white shadow-sm">
+
+        <div class="container">
+
+            <a class="navbar-brand fw-bold"><img src="assets/Layout/Brand/logo-colored.png" alt=""></a>
+
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item"><a class="nav-link" href="#Home">Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="#product">Products</a></li>
+                <li class="nav-item"><a class="nav-link" href="cart.html">Cart</a></li>
+            </ul>
+            <form class="d-flex w-50" onsubmit="searchProducts(event)">
+
+                <input id="searchInput" class="form-control me-2" type="text" placeholder="Search product name">
+
+                <select id="categorySelect" class="form-select me-2">
+
+                    <option value="all">All Categories</option>
+                    <option value="tech">Tech</option>
+                    <option value="interior">Interior</option>
+                    <option value="cloth">Clothing</option>
+                    <option value="appliances">Appliances</option>
+                </select>
+
+                <button type="submit" class="btn btn-primary">Search</button>
+
+            </form>
+
+        </div>
+
+    </nav>
+
+
+    <!-- SIDEBAR + BANNER -->
+
+    <div class="container-fluid mt-3" id="Home">
+
+        <div class="row">
+
+            <!-- Sidebar -->
+
+            <div class="col-md-2">
+
+                <ul class="list-group">
+
+                    <li class="list-group-item">Tech</li>
+                    <li class="list-group-item">Interior</li>
+                    <li class="list-group-item">Cloth</li>
+                    <li class="list-group-item">Appliances</li>
+
+                </ul>
+            </div>
+
+
+            <!-- Banner -->
+
+            <div class="col-md-10">
+                <div class="container text-white hero">
+                    <h1>Latest Trending Electronics</h1>
+                    <p>Discover the best deals on gadgets and accessories.</p> <button class="btn btn-primary">Shop
+                        Now</button>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- PRODUCT SECTION -->
+
+        <div class="container mt-5" id="product">
+
+            <h2 class="text-center mb-4">Featured Products</h2>
+
+            <div class="row" id="productContainer"></div>
+            <div class="text-center mt-4">
+                <button id="loadBtn" class="btn btn-outline-primary" onclick="loadMoreProducts()">Load More</button>
+            </div>
+
+        </div>
+
+
+        <!-- FOOTER -->
+
+        <footer class="bg-dark text-white text-center p-4 mt-5">
+
+            <p>© 2026 Brand | All Rights Reserved</p>
+
+        </footer>
+
+
+        <script src="app.js"></script>
+
+</body>
+
+</html>
