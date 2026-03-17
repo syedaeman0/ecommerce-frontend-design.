@@ -11,7 +11,7 @@
 <body>
 
     <!-- NAVBAR -->
-    <nav class="navbar navbar-expand-lg bg-white shadow-sm">
+    <nav class="navbar navbar-expand-lg bg-white shadow-sm fixed-top">
 
         <div class="container">
 
@@ -29,7 +29,7 @@
                 <ul class="navbar-nav ms-auto me-3">
                     <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
                     <li class="nav-item"><a class="nav-link" href="index.html">Products</a></li>
-                    <li class="nav-item"><a class="nav-link" href="cart.html">Cart</a></li>
+                    <li class="nav-item"><a class="nav-link" href="cart.html">🛒</a></li>
                 </ul>
 
                 <form class="d-flex" onsubmit="searchProducts(event)">
@@ -52,20 +52,27 @@
 
         </div>
     </nav>
-    
-    <div class="product-container">
 
-        <img id="productImage">
+    <div class="container mt-5">
 
-        <h2 id="productName"></h2>
+        <div class="row align-items-center">
 
-        <h3 id="productPrice"></h3>
+            <div class="col-md-6 text-center">
+                <img id="productImage" class="img-fluid product-img">
+            </div>
 
-        <p>
-            This is a high quality product. It is durable and perfect for daily use.
-        </p>
+            <div class="col-md-6">
+                <h2 id="productName"></h2>
 
-        <button class="buy-btn" href="cart.html" onclick="addToCart()">Add to Cart</button>
+                <h3 id="productPrice"></h3>
+
+                <p id="productDescription"></p>
+
+                <button class="buy-btn" onclick="addToCart()">Add to Cart</button>
+
+            </div>
+
+        </div>
 
     </div>
 
@@ -114,11 +121,69 @@
         </div>
 
     </div>
+    <div class="text-center mt-3">
+        <a href="index.html" class="btnn">← Back</a>
+    </div>
+    <footer class="footer-section mt-5">
 
-    <footer class="bg-dark text-white text-center p-4 mt-5">
+        <div class="container">
+            <div class="row">
 
-        <p>© 2026 Brand | All Rights Reserved</p>
+                <!-- Brand -->
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <h5 class="fw-bold">Brand</h5>
 
+                    <p class="text-muted">
+                        Best information about the company goes here but now lorem ipsum is
+                    </p>
+                </div>
+
+                <!-- About -->
+                <div class="col-lg-2 col-md-6 mb-4">
+                    <h6 class="fw-bold">About</h6>
+
+                    <ul class="footer-links">
+                        <li><a href="#">About us</a></li>
+                        <li><a href="#">Find Store</a></li>
+                        <li><a href="#">Categories</a></li>
+                        <li><a href="#">Blogs</a></li>
+                        <li><a href="#">Partnership</a></li>
+                    </ul>
+                </div>
+
+                <!-- Information -->
+                <div class="col-lg-2 col-md-6 mb-4">
+                    <h6 class="fw-bold">Information</h6>
+
+                    <ul class="footer-links">
+                        <li><a href="#">Help center</a></li>
+                        <li><a href="#">Money refund</a></li>
+                        <li><a href="#">Shipping</a></li>
+                        <li><a href="#">Contact us</a></li>
+                    </ul>
+                </div>
+
+                <!-- For Users -->
+                <div class="col-lg-2 col-md-6 mb-4">
+                    <h6 class="fw-bold">For users</h6>
+
+                    <ul class="footer-links">
+                        <li><a href="#">Login</a></li>
+                        <li><a href="#">Register</a></li>
+                        <li><a href="#">Setting</a></li>
+                        <li><a href="#">My orders</a></li>
+                    </ul>
+                </div>
+
+                <!-- Get App -->
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <h6 class="fw-bold">Get App</h6>
+
+                    <img src="assets/Layout/Misc/Group.png" alt="Google Play" class="app-img">
+                </div>
+
+            </div>
+        </div>
     </footer>
     <script src="app.js"></script>
     <script src="product.js"></script>

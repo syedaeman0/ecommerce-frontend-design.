@@ -17,7 +17,7 @@
 <body>
 
     <!-- NAVBAR -->
-    <nav class="navbar navbar-expand-lg bg-white shadow-sm">
+    <nav class="navbar navbar-expand-lg bg-white shadow-sm fixed-top">
 
         <div class="container">
 
@@ -33,9 +33,9 @@
             <div class="collapse navbar-collapse" id="navbarMenu">
 
                 <ul class="navbar-nav ms-auto me-3">
-                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#Home">Home</a></li>
                     <li class="nav-item"><a class="nav-link" href="index.html">Products</a></li>
-                    <li class="nav-item"><a class="nav-link" href="cart.html">Cart</a></li>
+                    <li class="nav-item"><a class="nav-link" href="cart.html">🛒</a></li>
                 </ul>
 
                 <form class="d-flex" onsubmit="searchProducts(event)">
@@ -60,62 +60,449 @@
 
     </nav>
 
+
     <!-- SIDEBAR + BANNER -->
 
-    <div class="container-fluid mt-3" id="Home">
+    <div class="container-fluid mt-3">
 
         <div class="row">
 
             <!-- Sidebar -->
-
-            <div class="col-md-2">
-
+            <div class="col-lg-2 col-md-3 mb-3 sidebar">
                 <ul class="list-group">
 
-                    <li class="list-group-item">Tech</li>
-                    <li class="list-group-item">Interior</li>
-                    <li class="list-group-item">Cloth</li>
-                    <li class="list-group-item">Appliances</li>
+                    <li class="list-group-item" onclick="filterCategory('tech')">Tech</li>
+
+                    <li class="list-group-item" onclick="filterCategory('interior')">Interior</li>
+
+                    <li class="list-group-item" onclick="filterCategory('cloth')">Clothing</li>
+
+                    <li class="list-group-item" onclick="filterCategory('appliances')">Appliances</li>
+
+                    <li class="list-group-item" onclick="filterCategory('all')">All Products</li>
 
                 </ul>
             </div>
 
+            <!-- banner -->
+            <div class="col-lg-10 col-md-9">
 
-            <!-- Banner -->
+                <div class="row g-3">
 
-            <div class="col-md-10">
-                <div class="container text-white hero">
-                    <h1>Latest Trending Electronics</h1>
-                    <p>Discover the best deals on gadgets and accessories.</p> <button class="btn btn-primary">Shop
-                        Now</button>
+                    <!-- BANNER WITH IMAGE -->
+                    <div class="col-lg-8">
+                        <div class="hero p-4 rounded">
+                            <h1>Latest Trending <br>Electronics</h1>
+                            <p>Discover the best deals on gadgets and accessories.</p>
+                            <button class="btn btn-primary">Shop Now</button>
+                        </div>
+                    </div>
+
+                    <!-- RIGHT BOXES -->
+                    <div class="col-lg-4 d-none d-lg-flex flex-column gap-3">
+
+                        <div class="p-3 bg-primary text-white rounded">
+                            <h6>Hi, Lets start</h6>
+                            <button class="btn btn-light btn-sm mt-2">Join now</button>
+                        </div>
+
+                        <div class="p-3 bg-info text-white rounded">
+                            <h6>Get US $10 off</h6>
+                            <p class="small">with a new supplier</p>
+                        </div>
+
+                        <div class="p-3 bg-warning text-dark rounded">
+                            <h6>Send quotes with</h6>
+                            <p class="small">supplier preferences</p>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- deal and offer -->
+            <div class="container mt-5">
+
+                <div class="deal-section">
+
+                    <div class="row align-items-center">
+
+                        <!-- LEFT SIDE (Deals + Time) -->
+
+                        <div class="col-md-2 deal-info">
+
+                            <h5>Deals & Offers</h5>
+                            <p class="text-muted">Hygiene equipments</p>
+
+                            <div class="deal-timer">
+
+                                <div class="time-box">04 <span>Days</span></div>
+                                <div class="time-box">13 <span>Hour</span></div>
+                                <div class="time-box">20 <span>Min</span></div>
+                                <div class="time-box">10 <span>Sec</span></div>
+
+                            </div>
+
+                        </div>
+
+                        <!-- RIGHT SIDE (Products) -->
+
+                        <div class="col-md-10">
+
+                            <div class="row text-center" id="dealContainer"></div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+        <!-- elertic consumer -->
+
+        <div class="container mt-5">
+
+            <div class="row electronics-section">
+
+                <!-- LEFT IMAGE -->
+
+                <div class="col-md-4 electronics-banner">
+
+                    <h4>Consumer electronics and gadgets</h4>
+                    <button class="btn btn-light mt-2">Source now</button>
+
+                </div>
+
+                <!-- PRODUCTS -->
+
+                <div class="col-md-8 prod">
+                    <div class="row text-center" id="homeProducts"></div>
                 </div>
             </div>
         </div>
+        <!-- HOME AND OUT DOOR -->
+        <div class="container mt-5">
+
+            <div class="row home-section">
+
+                <!-- LEFT SIDE IMAGE -->
+
+                <div class="col-md-4 home-banner">
+
+                    <h4>Home And <br>Outdoor</h4>
+
+                    <button class="btn btn-light mt-2">Source now</button>
+
+                </div>
+
+                <!-- RIGHT SIDE PRODUCTS -->
+
+                <div class="col-md-8 prod">
+                    <div class="row text-center" id="homeOutdoorProducts"></div>
+                </div>
+            </div>
+        </div>
+        <!-- inqurie -->
+
+        <div class="container mt-5">
+
+            <div class="quote-section position-relative p-5 text-white">
+
+                <div class="row align-items-center">
+
+                    <!-- LEFT TEXT -->
+
+                    <div class="col-md-7">
+
+                        <h3>An easy way to send requests to all suppliers</h3>
+
+                        <p>Do try us to get amazing discounts and special offers</p>
+
+                    </div>
 
 
-        <!-- PRODUCT SECTION -->
+                    <!-- RIGHT FORM -->
 
-        <div class="container mt-5" id="product">
+                    <div class="col-md-5">
 
-            <h2 class="text-center mb-4">Featured Products</h2>
+                        <div class="quote-box bg-white p-4 rounded shadow">
 
-            <div class="row" id="productContainer"></div>
-            <div class="text-center mt-4">
-                <button id="loadBtn" class="btn btn-outline-primary" onclick="loadMoreProducts()">Load More</button>
+                            <h5 class="text-dark mb-3">Send quote to suppliers</h5>
+
+                            <form>
+
+                                <input type="text" placeholder="Type more details" class="form-control mb-3">
+
+                                <textarea placeholder="What item do you need?" class="form-control mb-3"></textarea>
+
+                                <div class="row mb-3">
+
+                                    <div class="col">
+                                        <input type="text" placeholder="Quantity" class="form-control">
+                                    </div>
+
+                                    <div class="col">
+                                        <select class="form-select">
+                                            <option>Pcs</option>
+                                            <option>Full set</option>
+                                            <option>Different</option>
+                                        </select>
+                                    </div>
+
+                                </div>
+
+                                <button class="btn btn-primary">Send Inquiry</button>
+
+                            </form>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+        <!-- service section -->
+
+        <div class="container mt-5">
+
+            <h4 class="mb-4">Services</h4>
+
+            <div class="row g-4">
+
+                <!-- Service 1 -->
+                <div class="col-md-3">
+                    <div class="service-card">
+                        <img src="assets/Image/backgrounds/image 106.png" alt="">
+                        <div class="service-text">
+                            Source from Industry Hubs
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Service 2 -->
+                <div class="col-md-3">
+                    <div class="service-card">
+                        <img src="assets/Image/backgrounds/Mask group (1).png" alt="">
+                        <div class="service-text">
+                            Customize Your Products
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Service 3 -->
+                <div class="col-md-3">
+                    <div class="service-card">
+                        <img src="assets/Image/backgrounds/image 107.png" alt="">
+                        <div class="service-text">
+                            Fast, reliable shipping by ocean or air
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Service 4 -->
+                <div class="col-md-3">
+                    <div class="service-card">
+                        <img src="assets/Image/backgrounds/Mask group.png" alt="">
+                        <div class="service-text">
+                            Product monitoring and inspection
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+        <!-- recomended items -->
+        <div class="container mt-5">
+
+            <h4 class="mb-4">Recommended Items</h4>
+
+            <div class="row text-center" id="recommendedItems"></div>
+            <p id="noResult" style="display:none; text-align:center; color:red; font-weight:600; margin-top:20px;">
+                Item is not available
+            </p>
+        </div>
+
+        <!-- suppliesss -->
+        <div class="container mt-5">
+
+            <h4 class="mb-4">Suppliers by region</h4>
+
+            <div class="suppliers-grid">
+
+                <div class="supplier-item">
+                    <img src="assets/flags/AE@2x.png" alt="">
+                    <div>
+                        <p>koko.com</p>
+                        <span>UAE</span>
+                    </div>
+                </div>
+
+                <div class="supplier-item">
+                    <img src="assets/flags/CN@2x.png" alt="">
+                    <div>
+                        <p>bananay.com</p>
+                        <span>China</span>
+                    </div>
+                </div>
+
+                <div class="supplier-item">
+                    <img src="assets/flags/AE@2x.png" alt="">
+                    <div>
+                        <p>emrsaj.com</p>
+                        <span>Dubai</span>
+                    </div>
+                </div>
+
+                <div class="supplier-item">
+                    <img src="assets/flags/DK@2x.png" alt="">
+                    <div>
+                        <p>snowball.com</p>
+                        <span>Denmark</span>
+                    </div>
+                </div>
+
+                <div class="supplier-item">
+                    <img src="assets/flags/FR@2x.png" alt="">
+                    <div>
+                        <p>shugaf.com</p>
+                        <span>France</span>
+                    </div>
+                </div>
+
+                <div class="supplier-item">
+                    <img src="assets/flags/GB@2x.png" alt="">
+                    <div>
+                        <p>livelife.com</p>
+                        <span>Greenland</span>
+                    </div>
+                </div>
+
+                <div class="supplier-item">
+                    <img src="assets/flags/IT@2x.png" alt="">
+                    <div>
+                        <p>happycoc.com</p>
+                        <span>Italy</span>
+                    </div>
+                </div>
+
+                <div class="supplier-item">
+                    <img src="assets/flags/RU@2x.png" alt="">
+                    <div>
+                        <p>oidbh.com</p>
+                        <span>Russia</span>
+                    </div>
+                </div>
+
+                <div class="supplier-item">
+                    <img src="assets/flags/US@2x.png" alt="">
+                    <div>
+                        <p>market.com</p>
+                        <span>USA</span>
+                    </div>
+                </div>
+
+                <div class="supplier-item">
+                    <img src="assets/flags/DE@2x.png" alt="">
+                    <div>
+                        <p>globalhub.com</p>
+                        <span>Germany</span>
+                    </div>
+                </div>
+
             </div>
 
         </div>
 
+        <!-- letter section -->
+        <div class="container mt-5 newsletter-section text-center">
+
+            <h4>Subscribe to our newsletter</h4>
+
+            <p class="text-muted">
+                Get daily news on upcoming offers from many suppliers all over the world
+            </p>
+
+            <div class="newsletter-box">
+
+                <input type="email" placeholder="Enter your email" class="form-control">
+
+                <button class="btn btn-primary">Subscribe</button>
+
+            </div>
+
+        </div>
 
         <!-- FOOTER -->
 
-        <footer class="bg-dark text-white text-center p-4 mt-5">
+        <footer class="footer-section mt-5">
 
-            <p>© 2026 Brand | All Rights Reserved</p>
+            <div class="container">
+                <div class="row">
+
+                    <!-- Brand -->
+                    <div class="col-lg-3 col-md-6 mb-4">
+                        <h5 class="fw-bold" hre>Brand</h5>
+
+                        <p class="text-muted">
+                            Best information about the company goes here but now lorem ipsum is
+                        </p>
+                    </div>
+
+                    <!-- About -->
+                    <div class="col-lg-2 col-md-6 mb-4">
+                        <h6 class="fw-bold">About</h6>
+
+                        <ul class="footer-links">
+                            <li><a href="#">About us</a></li>
+                            <li><a href="#">Find Store</a></li>
+                            <li><a href="#">Categories</a></li>
+                            <li><a href="#">Blogs</a></li>
+                            <li><a href="#">Partnership</a></li>
+                        </ul>
+                    </div>
+
+                    <!-- Information -->
+                    <div class="col-lg-2 col-md-6 mb-4">
+                        <h6 class="fw-bold">Information</h6>
+
+                        <ul class="footer-links">
+                            <li><a href="#">Help center</a></li>
+                            <li><a href="#">Money refund</a></li>
+                            <li><a href="#">Shipping</a></li>
+                            <li><a href="#">Contact us</a></li>
+                        </ul>
+                    </div>
+
+                    <!-- For Users -->
+                    <div class="col-lg-2 col-md-6 mb-4">
+                        <h6 class="fw-bold">For users</h6>
+
+                        <ul class="footer-links">
+                            <li><a href="#">Login</a></li>
+                            <li><a href="#">Register</a></li>
+                            <li><a href="#">Setting</a></li>
+                            <li><a href="#">My orders</a></li>
+                        </ul>
+                    </div>
+
+                    <!-- Get App -->
+                    <div class="col-lg-3 col-md-6 mb-4">
+                        <h6 class="fw-bold">Get App</h6>
+
+                        <img src="assets/Layout/Misc/Group.png" alt="Google Play" class="app-img">
+                    </div>
+
+                </div>
+            </div>
 
         </footer>
-
-
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
         <script src="app.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 
